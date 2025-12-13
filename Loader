@@ -1,0 +1,42 @@
+local Players = game:GetService("Players")
+local MarketplaceService = game:GetService("MarketplaceService")
+
+local GameId = game.GameId
+
+local Games = {
+    {
+        Ids = {92371631484540, 9168386959},
+        Url = "https://raw.githubusercontent.com/DuxiiT/Stellar-Hub/refs/heads/main/Survive-Wave-Z"
+    },
+
+    {
+        Ids = {76558904092080, 7671049560},
+        Url = "https://raw.githubusercontent.com/DuxiiT/Stellar-Hub/refs/heads/main/The-Forge"
+    },
+
+    {
+        Ids = {63955796, 137885680},
+        Url = "https://raw.githubusercontent.com/DuxiiT/Stellar-Hub/refs/heads/main/Zombie-Rush"
+    },
+
+    {
+        Ids = {94048236450391, 8982142320},
+        Url = "https://raw.githubusercontent.com/DuxiiT/Stellar-Hub/refs/heads/main/Build-A-Mining-Machine"
+    }
+}
+
+local function LoadScript(url)
+    local success, result = pcall(function()
+        return loadstring(game:HttpGet(url))()
+    end)
+
+    if not success then
+        warn("Stellar V1 | Failed to load script:", result)
+    end
+end
+
+for _, GameData in ipairs(Games) do
+    if table.find(GameData.Ids, GameId) then
+        return LoadScript(GameData.Url)
+    end
+end
