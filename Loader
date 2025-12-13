@@ -22,6 +22,11 @@ local Games = {
     {
         Ids = {94048236450391, 8982142320},
         Url = "https://raw.githubusercontent.com/DuxiiT/Stellar-Hub/refs/heads/main/Build-A-Mining-Machine"
+    },
+
+    {
+        Ids = {136801880565837, 8795154789},
+        Url = "https://raw.githubusercontent.com/DuxiiT/Stellar-Hub/refs/heads/main/Flick"
     }
 }
 
